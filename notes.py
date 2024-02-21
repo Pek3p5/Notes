@@ -30,8 +30,12 @@ def delete_note():
 
 
 def edit_note():
-    delete_note()
-    save_note()
+    index = notes_list.curselection()
+    note = note_entry.get()
+    if index:
+        delete_note()
+    if note != "":
+        save_note()
     update_notes_list()
 
 
